@@ -6,6 +6,7 @@ class CourseCover extends StatelessWidget {
     return Container(
       height: 200,
       width: 140,
+      margin: EdgeInsets.only(right: 16),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.orange,
