@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "nome": "Curso de Python",
+  "descricao": "O melhor curso do universo",
+  "datahora": "2021-02-28",
+  "aulas": [
+    {
+      "nome": "Joao",
+      "datahora": "2021-12-25",
+      "linkmeet": "lol.com",
+      "id_curso": 1,
+      "alunos": [
+        {
+          "id": 2,
+          "nome": "Adnan Jebailey",
+          "nota": 10,
+          "presente": true,
+          "linkaluno": "github.com"
+        },
+        {
+          "id": 2,
+          "nome": "Adnan Jebailey",
+          "nota": 10,
+          "presente": true,
+          "linkaluno": "github.com"
+        }
+      ]
+    }
+  ]
+}

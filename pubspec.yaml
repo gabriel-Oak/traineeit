@@ -1,6 +1,6 @@
 name: traineeit
 description: A new Flutter project.
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -13,9 +13,14 @@ dependencies:
   bloc: ^6.1.1
   flutter_bloc: ^6.1.1
   equatable: ^1.2.5
+  google_sign_in: 4.5.9
+  dio:
+  meta:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter:
   uses-material-design: true
+  assets:
+    - assets/
