@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/pages/home/home_page.dart';
+import 'package:traineeit/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,10 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Trainee It',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: theme,
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
