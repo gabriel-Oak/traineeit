@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traineeit/models/course_read_model.dart';
 import 'package:traineeit/pages/home/home_new_courses.dart';
 
 class HomePainel extends StatelessWidget {
@@ -6,6 +7,9 @@ class HomePainel extends StatelessWidget {
     topLeft: Radius.circular(20),
     topRight: Radius.circular(20),
   );
+  final List<CourseReadModel> courses;
+
+  HomePainel({this.courses = const []});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,7 @@ class HomePainel extends StatelessWidget {
                 ),
               ],
             ),
-            HomeNewCourses(),
+            HomeNewCourses(courses: courses),
           ],
         ),
       ),
