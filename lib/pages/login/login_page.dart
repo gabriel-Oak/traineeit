@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<LoginBloc>(
         create: (_) => LoginBloc(
-          googleSingin: GoogleSingin()
+          googleSingin: GoogleSingin(),
         ),
         child: LoginContent(),
       ),

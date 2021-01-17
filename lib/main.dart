@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/pages/login/login_page.dart';
+import 'package:traineeit/pages/presence/presence_page.dart';
 import 'package:traineeit/theme.dart';
 
 import 'pages/evaluation/evaluation_page.dart';
