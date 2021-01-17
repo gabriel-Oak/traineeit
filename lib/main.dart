@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traineeit/pages/login/login_page.dart';
+import 'package:traineeit/pages/course_detail/course_detail_page.dart';
 import 'package:traineeit/theme.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Trainee It',
       theme: theme,
-      home: LoginPage(),
+      home: CourseDetailPage(),
     );
   }
 }
