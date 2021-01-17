@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/components/back_button.dart';
+import 'package:traineeit/pages/course_detail/widget/alert_enroll.dart';
 import 'package:traineeit/pages/course_detail/widget/class_item.dart';
+import 'package:traineeit/pages/course_detail/widget/dialog_class.dart';
 import 'package:traineeit/pages/course_detail/widget/enroll_button.dart';
 import 'package:traineeit/pages/course_detail/widget/header_course.dart';
 
@@ -35,24 +37,28 @@ class CourseDetailContent extends StatelessWidget {
                   ),
                 ],
               ),
-              ClassItem(text: 'aula 1 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 2 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 3 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 4 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 5 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 6 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 7 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
-              ClassItem(text: 'aula 8 | Lorem ipsum dolor'),
+              ClassItem(text: 'aula 1 | Lorem ipsum dolor', onTap: _showDialog),
+              ClassItem(text: 'aula 2 | Lorem ipsum dolor', onTap: _showDialog),
+              ClassItem(text: 'aula 3 | Lorem ipsum dolor', onTap: _showDialog),
             ],
           ),
         ),
-        EnrollButton(),
+        EnrollButton(onTap: _makeEnroll),
       ],
+    );
+  }
+
+  _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      child: DialogClass(),
+    );
+  }
+
+  _makeEnroll(BuildContext context) {
+    showDialog(
+      context: context,
+      child: AlertEnroll(),
     );
   }
 }
