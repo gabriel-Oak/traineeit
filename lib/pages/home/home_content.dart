@@ -6,13 +6,20 @@ import 'package:traineeit/pages/home/home_bloc.dart';
 import 'package:traineeit/pages/home/home_courses.dart';
 import 'package:traineeit/pages/home/home_painel.dart';
 import 'package:traineeit/pages/home/home_state.dart';
+import 'package:traineeit/pages/login/login_page.dart';
 
 class HomeContent extends StatelessWidget {
+  final controller = PanelController();
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<HomeBloc, HomeState>(
-      listenWhen: (previous, current) => previous.error != current.error,
       listener: (context, state) {
+        if (state.loading)
+          controller.animatePanelToPosition(0);
+        else
+          controller.animatePanelToPosition(0.3);
+
         if (state.error != null && state.error.isNotEmpty) {
           final snack = SnackBar(content: Text(state.error));
           Scaffold.of(context).showSnackBar(snack);
@@ -21,15 +28,14 @@ class HomeContent extends StatelessWidget {
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return SlidingUpPanel(
-            minHeight: state.loading ? 80 : 340,
+            minHeight: 80,
             maxHeight: MediaQuery.of(context).size.height,
-            controller: PanelController(),
+            controller: controller,
             body: Stack(
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height -
-                      (state.loading ? 70 : 330),
+                  height: MediaQuery.of(context).size.height - 70,
                   color: Colors.grey[100],
                   child: Image.asset(
                     'assets/images/background.png',
@@ -43,11 +49,16 @@ class HomeContent extends StatelessWidget {
                       child: SvgPicture.asset(
                         'assets/images/logo.svg',
                         semanticsLabel: 'Acme Logo',
+                        height: 40,
                       ),
                     ),
                     actions: [
                       FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (_) => LoginPage()),
+                          );
+                        },
                         child: Row(
                           children: [
                             Text(
@@ -72,20 +83,22 @@ class HomeContent extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        state.user != null
-                            ? Container(
-                                margin: EdgeInsets.only(left: 20),
-                                child: Text(
-                                  'Olá, ${state.user.name}',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w600,
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              )
-                            : Container(),
+                        AnimatedOpacity(
+                          opacity: state.user != null ? 1 : 0,
+                          duration: Duration(milliseconds: 480),
+                          child: Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Text(
+                              'Olá, ${state.user?.name}',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
                         state.user != null
                             ? HomeCourses(myCourses: state.user.courses)
                             : Container(),
@@ -94,14 +107,19 @@ class HomeContent extends StatelessWidget {
                   ),
                   backgroundColor: Colors.transparent,
                 ),
-                state.loading ? LinearProgressIndicator() : Container(),
+                state.loading
+                    ? Align(
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator(),
+                      )
+                    : Container(),
               ],
             ),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            panel: HomePainel(),
+            panel: HomePainel(courses: state.courses),
           );
         },
       ),
