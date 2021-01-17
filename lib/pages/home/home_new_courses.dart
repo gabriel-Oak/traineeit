@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:traineeit/models/course_read_model.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:traineeit/pages/course_detail/course_detail_page.dart';
 
 class HomeNewCourses extends StatelessWidget {
   final List<CourseReadModel> courses;
@@ -73,6 +75,25 @@ class HomeNewCourses extends StatelessWidget {
                       ],
                     ),
                     Divider(height: 40),
+                    SizedBox(width: 16),
+                    FlatButton(
+                      color: Theme.of(context).primaryColor,
+                      textColor: Colors.white,
+                      child: Text(
+                        'Detalhes',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: CourseDetailPage()));
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                    )
                   ],
                 ),
               ),

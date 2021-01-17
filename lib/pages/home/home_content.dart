@@ -22,7 +22,7 @@ class HomeContent extends StatelessWidget {
 
         if (state.error != null && state.error.isNotEmpty) {
           final snack = SnackBar(content: Text(state.error));
-          ScaffoldMessenger.of(context).showSnackBar(snack);
+          Scaffold.of(context).showSnackBar(snack);
         }
       },
       child: BlocBuilder<HomeBloc, HomeState>(
