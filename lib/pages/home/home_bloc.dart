@@ -32,7 +32,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           loading: false,
           error: 'Erro ao buscar informações!',
         );
-        print(e);
       }
     }
   }

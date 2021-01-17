@@ -70,6 +70,7 @@ class HomeContent extends StatelessWidget {
                                 myCourses: state.user.courses,
                                 canSeeSubs: state.user.type != 'Aluno',
                                 canCreate: state.user.type == 'Professor',
+                                canAddLogo: state.user.type == 'Empresa',
                               )
                             : Container(),
                       ],
