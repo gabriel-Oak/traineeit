@@ -8,12 +8,14 @@ class CourseReadModel extends Equatable {
   final String description;
   final String date;
   final List<dynamic> classes;
+  final int totalHours;
 
   CourseReadModel({
     @required this.id,
     @required this.name,
     @required this.description,
     @required this.date,
+    @required this.totalHours,
     @required this.classes,
   });
 
@@ -22,6 +24,7 @@ class CourseReadModel extends Equatable {
         name: map['nome'],
         description: map['descricao'],
         date: map['datahora'],
+        totalHours: map['totaldehoras'],
         classes: map['aulas']
             .map(
               (e) => ClassModel.fromJSON(e),
@@ -30,5 +33,5 @@ class CourseReadModel extends Equatable {
       );
 
   @override
-  List<Object> get props => [id, name, description, date, classes];
+  List<Object> get props => [id, name, description, date, classes, totalHours];
 }

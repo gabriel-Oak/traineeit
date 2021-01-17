@@ -53,7 +53,7 @@ class HomeNewCourses extends StatelessWidget {
                                 children: [
                                   _mountChip('${e.classes.length} aulas'),
                                   SizedBox(width: 8),
-                                  _mountChip('30h'),
+                                  _mountChip('${e.totalHours}h'),
                                 ],
                               )
                             ],

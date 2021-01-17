@@ -11,6 +11,7 @@ class UserService {
   Future<UserReadModel> getUser(int id) async {
     final Response<Map<String, dynamic>> res =
         await dio.get('/usuarioleitura/$id/');
+    print(res);
     return UserReadModel.fromJSON(res.data);
   }
 }
