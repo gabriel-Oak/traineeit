@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:traineeit/components/back_button.dart';
 import 'package:traineeit/pages/course_detail/widget/alert_enroll.dart';
 import 'package:traineeit/pages/course_detail/widget/class_item.dart';
+import 'package:traineeit/pages/course_detail/widget/companies.dart';
 import 'package:traineeit/pages/course_detail/widget/dialog_class.dart';
 import 'package:traineeit/pages/course_detail/widget/enroll_button.dart';
 import 'package:traineeit/pages/course_detail/widget/header_course.dart';
@@ -24,6 +25,7 @@ class CourseDetailContent extends StatelessWidget {
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget risus libero. Vestibulum fermentum nibh ut enim porta, a consectetur lectus dapibus.',
                       style:
                           TextStyle(color: Color(0xff555555), fontSize: 14))),
+              Companies(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
