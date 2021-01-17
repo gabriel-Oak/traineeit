@@ -11,16 +11,29 @@ class HomeCourses extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 20),
             child: Text(
-              'Meus Cursos',
+              'Olá, Bastião',
               style: TextStyle(
                 fontSize: 24,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).primaryColor,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 20, top: 36),
+            child: Text(
+              'Meus Cursos',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
                 color: Theme.of(context).primaryColor,
               ),
             ),
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(top: 8, bottom: 8, left: 16),
+            padding: EdgeInsets.only(top: 16, bottom: 8, left: 20, right: 10),
             child: Row(
               children: [
                 CourseCover(),

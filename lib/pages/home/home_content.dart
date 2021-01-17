@@ -7,34 +7,56 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
-      minHeight: 100,
+      minHeight: 340,
+      maxHeight: MediaQuery.of(context).size.height,
       controller: PanelController(),
-      body: Scaffold(
-        appBar: AppBar(
-          leading: Container(
-            padding: EdgeInsets.only(left: 16),
-            child: Image.asset('assets/images/logo.png'),
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            color: Colors.grey[100],
+            child: Image.asset(
+              'assets/images/background.png',
+              fit: BoxFit.cover,
             ),
-            IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: SingleChildScrollView(
-          padding: EdgeInsets.only(top: 20),
-          child: Column(
-            children: [
-              HomeCourses(),
-            ],
           ),
-        ),
-        backgroundColor: Colors.grey[200],
+          Scaffold(
+            appBar: AppBar(
+              leading: Container(
+                padding: EdgeInsets.only(left: 16),
+                child: Image.asset('assets/images/logo.png'),
+              ),
+              actions: [
+                FlatButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Text(
+                        'Logout',
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
+                      SizedBox(width: 6),
+                      Icon(
+                        Icons.logout,
+                        size: 20,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            body: SingleChildScrollView(
+              padding: EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  HomeCourses(),
+                ],
+              ),
+            ),
+            backgroundColor: Colors.transparent,
+          ),
+        ],
       ),
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(20),
