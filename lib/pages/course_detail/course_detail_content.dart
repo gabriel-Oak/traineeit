@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/components/back_button.dart';
-import 'package:traineeit/pages/course_detail/widget/class.dart';
+import 'package:traineeit/pages/course_detail/widget/class_item.dart';
 import 'package:traineeit/pages/course_detail/widget/enroll_button.dart';
 import 'package:traineeit/pages/course_detail/widget/header_course.dart';
 
