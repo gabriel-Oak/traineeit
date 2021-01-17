@@ -8,6 +8,7 @@ class UserReadModel extends Equatable {
   final String email;
   final String googleid;
   final List<dynamic> courses;
+  final String type;
 
   UserReadModel({
     @required this.id,
@@ -15,6 +16,7 @@ class UserReadModel extends Equatable {
     @required this.email,
     @required this.googleid,
     @required this.courses,
+    @required this.type,
   });
 
   factory UserReadModel.fromJSON(Map<String, dynamic> map) => UserReadModel(
@@ -23,8 +25,9 @@ class UserReadModel extends Equatable {
         email: map['email'],
         googleid: map['googleid'],
         courses: map['cursos'].map((e) => UserCourseModel.fromJSON(e)).toList(),
+        type: map['tipousuario'],
       );
 
   @override
-  List<Object> get props => [id, name, email, googleid, courses];
+  List<Object> get props => [id, name, email, googleid, courses, type];
 }

@@ -15,10 +15,7 @@ class HomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<HomeBloc, HomeState>(
       listener: (context, state) {
-        if (state.loading)
-          controller.animatePanelToPosition(0);
-        else
-          controller.animatePanelToPosition(0.3);
+        controller.animatePanelToPosition(0);
 
         if (state.error != null && state.error.isNotEmpty) {
           final snack = SnackBar(content: Text(state.error));
@@ -28,7 +25,7 @@ class HomeContent extends StatelessWidget {
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return SlidingUpPanel(
-            minHeight: 80,
+            minHeight: state.loading ? 80 : 280,
             maxHeight: MediaQuery.of(context).size.height,
             controller: controller,
             body: Stack(
@@ -49,7 +46,7 @@ class HomeContent extends StatelessWidget {
                       child: SvgPicture.asset(
                         'assets/images/logo.svg',
                         semanticsLabel: 'Acme Logo',
-                        height: 40,
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                     actions: [
@@ -100,7 +97,11 @@ class HomeContent extends StatelessWidget {
                           ),
                         ),
                         state.user != null
-                            ? HomeCourses(myCourses: state.user.courses)
+                            ? HomeCourses(
+                                myCourses: state.user.courses,
+                                canSeeSubs: state.user.type != 'Aluno',
+                                canCreate: state.user.type == 'Professor',
+                              )
                             : Container(),
                       ],
                     ),

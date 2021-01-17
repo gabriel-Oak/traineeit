@@ -4,8 +4,9 @@ import 'package:traineeit/utils/course_color.dart';
 
 class CourseCover extends StatelessWidget {
   final UserCourseModel course;
+  final bool canSeeSubs;
 
-  CourseCover({@required this.course});
+  CourseCover({@required this.course, @required this.canSeeSubs});
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +55,14 @@ class CourseCover extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '12 aulas',
+                  '${course.classes.length} aulas',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Text(
-                  '30h',
+                  '${course.totalHours}h',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
@@ -79,6 +80,20 @@ class CourseCover extends StatelessWidget {
                 minHeight: 4,
               ),
             ),
+            SizedBox(height: 16),
+            canSeeSubs
+                ? Text(
+                    '${15} Inscrições',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.left,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  )
+                : Container(),
           ],
         ),
       ),
