@@ -19,4 +19,9 @@ class CourseService {
     final Response<Map<String, dynamic>> res = await dio.get('/curso/3');
     return UserCourseModel.fromJSON(res.data);
   }
+
+  Future<CourseReadModel> getByIdRead(int id) async {
+    final Response<Map<String, dynamic>> res = await dio.get('/curso/3');
+    return CourseReadModel.fromJSON(res.data);
+  }
 }
