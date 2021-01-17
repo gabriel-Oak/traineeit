@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:traineeit/models/course_read_model.dart';
+import 'package:traineeit/models/user_course_model.dart';
 
 class CourseService {
   final dio = Dio();
@@ -13,8 +14,8 @@ class CourseService {
     return res.data.map((e) => CourseReadModel.fromJSON(e)).toList();
   }
 
-  Future<CourseReadModel> getById(int id) async {
-    final Response<List> res = await dio.get('/curso/3');
-    // return res.data.map((e) => CourseReadModel.fromJSON(e)).toList();
+  Future<UserCourseModel> getById(int id) async {
+    final Response<Map<String, dynamic>> res = await dio.get('/curso/3');
+    return UserCourseModel.fromJSON(res.data);
   }
 }

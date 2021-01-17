@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Trainee It',
       theme: theme,
-      home: EvaluationPage(),
+      home: PresencePage(id: 1),
     );
   }
 }

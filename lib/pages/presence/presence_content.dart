@@ -77,7 +77,9 @@ class PresenceContent extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Design de Flutter UI/UX',
+                                state.course != null
+                                    ? state.course.name
+                                    : 'Curso Não Encontrado',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 20,
@@ -87,31 +89,37 @@ class PresenceContent extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 6),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.black54,
-                                  ),
-                                  children: [
-                                    TextSpan(text: 'Criado por: '),
-                                    TextSpan(
-                                      text: 'Raily',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              state.course != null
+                                  ? RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                          color: Colors.black54,
+                                        ),
+                                        children: [
+                                          TextSpan(text: 'Criado por: '),
+                                          TextSpan(
+                                            text: 'Raily',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  : Container(),
                               SizedBox(height: 6),
-                              Row(
-                                children: [
-                                  _mountChip('${12} aulas'),
-                                  SizedBox(width: 8),
-                                  _mountChip('${30}h'),
-                                ],
-                              ),
+                              state.course != null
+                                  ? Row(
+                                      children: [
+                                        _mountChip(
+                                            '${state.course.classes.length} aulas'),
+                                        SizedBox(width: 8),
+                                        _mountChip(
+                                            '${state.course.totalHours}h'),
+                                      ],
+                                    )
+                                  : Container(),
                               SizedBox(height: 18),
                               PresenceClassTile(),
                               PresenceClassTile(),
