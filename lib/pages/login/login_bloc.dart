@@ -18,7 +18,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       yield state.copyWith(loading: true);
       try {
         final user = await googleSingin.login();
-        yield state.copyWith(loading: false, success: true);
+        yield state.copyWith(loading: false, success: true, user: user);
       } catch (e) {
         print(e);
         // TODO: Tratar tipos de erro

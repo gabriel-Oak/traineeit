@@ -17,11 +17,12 @@ class LoginContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
-        if(state.success)
+        if (state.success)
           Navigator.pushReplacement(
               context,
               PageTransition(
-                  type: PageTransitionType.bottomToTop, child: SelectTypePage()));
+                  type: PageTransitionType.bottomToTop,
+                  child: SelectTypePage(user: state.user)));
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
@@ -35,8 +36,8 @@ class LoginContent extends StatelessWidget {
                   SvgPicture.asset('assets/images/logo.svg'),
                   SizedBox(height: 64),
                   Container(
-                      child:
-                          SvgPicture.asset('assets/images/folder-google-2.svg')),
+                      child: SvgPicture.asset(
+                          'assets/images/folder-google-2.svg')),
                   SizedBox(
                     height: 48,
                   ),
@@ -58,7 +59,8 @@ class LoginContent extends StatelessWidget {
                     width: double.infinity,
                     height: 40,
                     child: RaisedButton(
-                      onPressed: state.loading ? null : () => _makeLogin(context),
+                      onPressed:
+                          state.loading ? null : () => _makeLogin(context),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -86,7 +88,8 @@ class LoginContent extends StatelessWidget {
                   Text.rich(TextSpan(
                       text:
                           'Entrando na plataforma você esta concordando com os seguintes ',
-                      style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 11),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 11),
                       children: [
                         TextSpan(
                             text: 'termos de uso.',
