@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/components/back_button.dart';
-import 'file:///C:/Users/Gabri/Documents/Projects/traineeit/lib/components/header_course.dart';
+import 'package:traineeit/components/header_course.dart';
 import 'widget/lesson.dart';
 
 class CourseDetailRegisteredContent extends StatelessWidget {
@@ -18,12 +18,13 @@ class CourseDetailRegisteredContent extends StatelessWidget {
               CourseDetail(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: Text('Link para Instrutor',
+                child: Text(
+                  'Link para Instrutor',
                   style: TextStyle(
-                  color: Color(0xff555555),
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: .8
-                ),),
+                      color: Color(0xff555555),
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: .8),
+                ),
               ),
               Container(
                 decoration: BoxDecoration(
@@ -44,7 +45,6 @@ class CourseDetailRegisteredContent extends StatelessWidget {
                   ),
                 ),
               ),
-
               Lesson(),
               Lesson(),
               Lesson(),

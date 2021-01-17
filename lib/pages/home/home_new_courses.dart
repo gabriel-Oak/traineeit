@@ -67,7 +67,15 @@ class HomeNewCourses extends StatelessWidget {
                             'Detalhes',
                             style: TextStyle(fontSize: 16),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: CourseDetailPage(),
+                              ),
+                            );
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
@@ -75,25 +83,6 @@ class HomeNewCourses extends StatelessWidget {
                       ],
                     ),
                     Divider(height: 40),
-                    SizedBox(width: 16),
-                    FlatButton(
-                      color: Theme.of(context).primaryColor,
-                      textColor: Colors.white,
-                      child: Text(
-                        'Detalhes',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.bottomToTop,
-                                child: CourseDetailPage()));
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                    )
                   ],
                 ),
               ),

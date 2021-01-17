@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:traineeit/components/back_button.dart';
+import 'package:traineeit/components/header_course.dart';
 import 'package:traineeit/pages/course_detail/widget/alert_enroll.dart';
 import 'package:traineeit/pages/course_detail/widget/class_item.dart';
 import 'package:traineeit/pages/course_detail/widget/companies.dart';
 import 'package:traineeit/pages/course_detail/widget/dialog_class.dart';
 import 'package:traineeit/pages/course_detail/widget/enroll_button.dart';
-import 'file:///C:/Users/Gabri/Documents/Projects/traineeit/lib/components/header_course.dart';
 
 class CourseDetailContent extends StatelessWidget {
   @override
