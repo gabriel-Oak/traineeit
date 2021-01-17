@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:traineeit/pages/home/home_courses.dart';
 import 'package:traineeit/pages/home/home_painel.dart';
@@ -13,7 +14,10 @@ class HomeContent extends StatelessWidget {
         appBar: AppBar(
           leading: Container(
             padding: EdgeInsets.only(left: 16),
-            child: Image.asset('assets/images/logo.png'),
+            child: SvgPicture.asset(
+                'assets/images/logo.svg',
+                semanticsLabel: 'Acme Logo'
+            ),
           ),
           actions: [
             IconButton(

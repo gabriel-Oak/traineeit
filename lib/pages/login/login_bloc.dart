@@ -15,7 +15,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
     if (event is GoogleLogin) {
-      final user = await googleSingin.login();
+      yield state.copyWith(loading: true);
+      try {
+        final user = await googleSingin.login();
+        yield state.copyWith(loading: false, success: true);
+      } catch (e) {
+        print(e);
+        // TODO: Tratar tipos de erro
+        yield state.copyWith(
+            loading: false, errorMessage: 'Tivemos um problema');
+      }
     }
   }
 }
