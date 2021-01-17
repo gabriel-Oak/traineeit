@@ -5,7 +5,7 @@ import 'package:traineeit/pages/course_detail/widget/class_item.dart';
 import 'package:traineeit/pages/course_detail/widget/companies.dart';
 import 'package:traineeit/pages/course_detail/widget/dialog_class.dart';
 import 'package:traineeit/pages/course_detail/widget/enroll_button.dart';
-import 'package:traineeit/pages/course_detail/widget/header_course.dart';
+import 'file:///C:/Users/Gabri/Documents/Projects/traineeit/lib/components/header_course.dart';
 
 class CourseDetailContent extends StatelessWidget {
   @override
