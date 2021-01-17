@@ -24,10 +24,12 @@ class TypeButtonContinue extends StatelessWidget {
               onPressed: state.loading || state.type?.isNotEmpty != true
                   ? null
                   : () => BlocProvider.of<SelectTypeBloc>(context).add(Register(
-                      type: state.type,
-                      googleId: user.googleId,
-                      email: user.email,
-                      name: user.name)),
+                      user: UserModel(
+                          type: state.type,
+                          id: null,
+                          googleId: user.googleId,
+                          email: user.email,
+                          name: user.name))),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),

@@ -5,6 +5,7 @@ import 'package:traineeit/pages/home/home_content.dart';
 import 'package:traineeit/pages/home/home_event.dart';
 import 'package:traineeit/services/course_service.dart';
 import 'package:traineeit/services/user_service.dart';
+import 'package:traineeit/utils/LocalUser.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
       create: (_) => HomeBloc(
         userService: UserService(),
         courseService: CourseService(),
+        localUser: LocalUser(),
       )..add(InitHome()),
       child: HomeContent(),
     );

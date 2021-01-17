@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:traineeit/env.dart';
 import 'package:traineeit/models/course_read_model.dart';
 import 'package:traineeit/models/user_course_model.dart';
 
@@ -6,7 +7,7 @@ class CourseService {
   final dio = Dio();
 
   CourseService() {
-    dio.options.baseUrl = 'https://apiccr.herokuapp.com/api';
+    dio.options.baseUrl = kUrl;
   }
 
   Future<List<CourseReadModel>> getCourses() async {
