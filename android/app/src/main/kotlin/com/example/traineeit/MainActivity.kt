@@ -1,4 +1,4 @@
-package com.example.traineeit
+package br.com.traineeit
 
 import io.flutter.embedding.android.FlutterActivity
 

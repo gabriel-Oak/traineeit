@@ -2,24 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:traineeit/components/course_cover.dart';
 
 class HomeCourses extends StatelessWidget {
+  final List<dynamic> myCourses;
+
+  HomeCourses({@required this.myCourses});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: EdgeInsets.only(left: 20),
-            child: Text(
-              'Olá, Bastião',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Theme.of(context).primaryColor,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
           Container(
             margin: EdgeInsets.only(left: 20, top: 36),
             child: Text(
@@ -35,16 +27,7 @@ class HomeCourses extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(top: 16, bottom: 8, left: 20, right: 10),
             child: Row(
-              children: [
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-                CourseCover(),
-              ],
+              children: myCourses.map((e) => CourseCover(course: e)).toList(),
             ),
           ),
         ],

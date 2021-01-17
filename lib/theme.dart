@@ -7,6 +7,7 @@ final theme = ThemeData(
   primaryColor: primaryColor,
   accentColor: accentColor,
   visualDensity: VisualDensity.adaptivePlatformDensity,
+  fontFamily: 'Montserrat',
   appBarTheme: AppBarTheme(
     // backgroundColor: Colors.transparent,
     color: Colors.transparent,

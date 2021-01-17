@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "532322133172",
+    "project_id": "traneeit",
+    "storage_bucket": "traneeit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532322133172:android:1a65c9e5379e778e4da3e1",
+        "android_client_info": {
+          "package_name": "br.com.traineeit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532322133172-hnn82nq48q56d95o4pp9q73a7t6t9kgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.traineeit",
+            "certificate_hash": "5e0d9c7e640d10536e8857d291b694fb1e1dedc6"
+          }
+        },
+        {
+          "client_id": "532322133172-774albe32gq4v36949k7ftd1vq450npb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBTSRSzzDF1DlbKIDGFDNs-aESck9t90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532322133172-774albe32gq4v36949k7ftd1vq450npb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

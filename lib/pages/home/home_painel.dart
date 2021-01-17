@@ -30,7 +30,7 @@ class HomePainel extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 16, bottom: 10),
               width: 40,
-              height: 8,
+              height: 6,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
