@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:traineeit/components/course_details.dart';
 import 'package:traineeit/models/course_read_model.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:traineeit/pages/course_detail/course_detail_page.dart';
@@ -24,41 +25,7 @@ class HomeNewCourses extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                e.name,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black54,
-                                  decoration: TextDecoration.none,
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              Text(
-                                e.description,
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  decoration: TextDecoration.none,
-                                  color: Colors.black54,
-                                ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  _mountChip('${e.classes.length} aulas'),
-                                  SizedBox(width: 8),
-                                  _mountChip('${e.totalHours}h'),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                        Expanded(child: CourseDetails(course: e)),
                         SizedBox(width: 16),
                         FlatButton(
                           color: Theme.of(context).primaryColor,

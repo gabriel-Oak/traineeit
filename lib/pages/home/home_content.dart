@@ -18,7 +18,10 @@ class HomeContent extends StatelessWidget {
         controller.animatePanelToPosition(0);
 
         if (state.error != null && state.error.isNotEmpty) {
-          final snack = SnackBar(content: Text(state.error));
+          final snack = SnackBar(
+            content: Text(state.error),
+            duration: Duration(seconds: 6),
+          );
           Scaffold.of(context).showSnackBar(snack);
         }
       },
