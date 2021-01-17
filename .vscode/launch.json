@@ -5,6 +5,9 @@
   "version": "0.2.0",
   "configurations": [
     {
+      // "args": [
+      //   "--release"
+      // ],
       "name": "traineeit",
       "request": "launch",
       "type": "dart"

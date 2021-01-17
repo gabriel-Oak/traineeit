@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:traineeit/components/course_cover.dart';
+import 'package:traineeit/pages/register_course/register_course_page.dart';
 
 class HomeCourses extends StatelessWidget {
   final List<dynamic> myCourses;
@@ -75,14 +77,45 @@ class HomeCourses extends StatelessWidget {
                               ),
                             ],
                           ),
-                          // TODO: dar push pra tela de cadastro curso
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: RegisterCoursePage(),
+                              ),
+                            );
+                          },
                         ),
                       )
                     : Container(),
                 ...myCourses
                     .map((e) => CourseCover(course: e, canSeeSubs: canSeeSubs))
-                    .toList()
+                    .toList(),
+                myCourses.length == 0
+                    ? Container(
+                        height: 180,
+                        width: 150,
+                        margin: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Você ainda não possui nenhum curso',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(),
               ],
             ),
           ),

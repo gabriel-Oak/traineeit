@@ -13,11 +13,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final CourseService courseService;
   final LocalUser localUser;
 
-  HomeBloc(
-      {@required this.userService,
-      @required this.courseService,
-      @required this.localUser})
-      : super(HomeState());
+  HomeBloc({
+    @required this.userService,
+    @required this.courseService,
+    @required this.localUser,
+  }) : super(HomeState());
 
   @override
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
