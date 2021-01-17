@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class EnrollButton extends StatelessWidget {
+  final Function(BuildContext context) onTap;
+
+  EnrollButton({
+    @required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +17,7 @@ class EnrollButton extends StatelessWidget {
           width: double.infinity,
           height: 40,
           child: RaisedButton(
-            onPressed: false
-                ? null
-                : () {},
+            onPressed: () => onTap(context),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
