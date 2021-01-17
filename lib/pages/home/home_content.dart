@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:traineeit/components/shared_appbar.dart';
 import 'package:traineeit/pages/home/home_bloc.dart';
 import 'package:traineeit/pages/home/home_courses.dart';
 import 'package:traineeit/pages/home/home_painel.dart';
 import 'package:traineeit/pages/home/home_state.dart';
-import 'package:traineeit/pages/login/login_page.dart';
+import 'package:traineeit/services/google_singin.dart';
 
 class HomeContent extends StatelessWidget {
   final controller = PanelController();
@@ -40,41 +40,7 @@ class HomeContent extends StatelessWidget {
                   ),
                 ),
                 Scaffold(
-                  appBar: AppBar(
-                    leading: Container(
-                      padding: EdgeInsets.only(left: 16),
-                      child: SvgPicture.asset(
-                        'assets/images/logo.svg',
-                        semanticsLabel: 'Acme Logo',
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    actions: [
-                      FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (_) => LoginPage()),
-                          );
-                        },
-                        child: Row(
-                          children: [
-                            Text(
-                              'Logout',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(width: 6),
-                            Icon(
-                              Icons.logout,
-                              size: 20,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  appBar: SharedAppBar(googleSignIn: GoogleSingin()),
                   body: SingleChildScrollView(
                     padding: EdgeInsets.only(top: 20),
                     child: Column(
