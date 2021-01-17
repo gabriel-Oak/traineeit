@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Trainee It',
       theme: theme,
-      home: PresencePage(id: 1),
+      home: LoginPage(),
     );
   }
 }
