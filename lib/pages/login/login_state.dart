@@ -6,12 +6,14 @@ import 'package:traineeit/models/user_model.dart';
 class LoginState extends Equatable {
   final bool loading;
   final bool success;
+  final bool selectType;
   final String errorMessage;
   final UserModel user;
 
   LoginState({
     this.loading = false,
     this.success = false,
+    this.selectType = false,
     this.errorMessage,
     this.user,
   });
@@ -19,16 +21,18 @@ class LoginState extends Equatable {
   LoginState copyWith({
     bool loading,
     bool success,
+    bool selectType,
     String errorMessage,
     UserModel user,
   }) =>
       LoginState(
         loading: loading ?? this.loading,
         success: success ?? this.success,
+        selectType: selectType ?? this.selectType,
         errorMessage: errorMessage ?? this.errorMessage,
         user: user ?? this.user,
       );
 
   @override
-  List<Object> get props => [loading, success, errorMessage, user];
+  List<Object> get props => [loading, success, selectType, errorMessage, user];
 }

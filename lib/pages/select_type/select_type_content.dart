@@ -54,17 +54,17 @@ class SelectTypeContent extends StatelessWidget {
                       ),
                       SizedBox(height: 32),
                       TypeRadio(
-                          value: 'aluno',
+                          value: 'Aluno',
                           text: 'Aluno',
                           groupValue: state.type),
                       SizedBox(height: 8),
                       TypeRadio(
-                          value: 'instrutor',
+                          value: 'Professor',
                           text: 'Instrutor',
                           groupValue: state.type),
                       SizedBox(height: 8),
                       TypeRadio(
-                          value: 'empresa',
+                          value: 'Empresa',
                           text: 'Empresa',
                           groupValue: state.type),
                       SizedBox(height: 8),

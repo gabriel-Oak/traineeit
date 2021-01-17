@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:traineeit/models/user_model.dart';
 
 abstract class SelectTypeEvent {}
 
@@ -9,14 +10,7 @@ class SelectType extends SelectTypeEvent {
 }
 
 class Register extends SelectTypeEvent {
-  final String type;
-  final String googleId;
-  final String email;
-  final String name;
+final UserModel user;
 
-  Register(
-      {@required this.type,
-      @required this.googleId,
-      @required this.email,
-      @required this.name});
+  Register({@required this.user});
 }

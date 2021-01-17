@@ -5,11 +5,13 @@ class HomeCourses extends StatelessWidget {
   final List<dynamic> myCourses;
   final bool canSeeSubs;
   final bool canCreate;
+  final bool canAddLogo;
 
   HomeCourses({
     @required this.myCourses,
     @required this.canSeeSubs,
     @required this.canCreate,
+    @required this.canAddLogo,
   });
 
   @override
@@ -18,8 +20,17 @@ class HomeCourses extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          canAddLogo
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: Chip(
+                      label: Text('Adicionar logo',
+                          style: TextStyle(color: Colors.white)),
+                      backgroundColor: Color(0xff007A7B)),
+                )
+              : Container(),
           Container(
-            margin: EdgeInsets.only(left: 20, top: 36),
+            margin: EdgeInsets.only(left: 20, top: 16),
             child: Text(
               'Meus Cursos',
               style: TextStyle(

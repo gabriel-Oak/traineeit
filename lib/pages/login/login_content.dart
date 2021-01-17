@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:traineeit/pages/home/home_page.dart';
 import 'package:traineeit/pages/login/login_event.dart';
 import 'package:traineeit/pages/select_type/select_type_page.dart';
 
@@ -17,12 +18,18 @@ class LoginContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
+        if (state.selectType)
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  type: PageTransitionType.fade,
+                  child: SelectTypePage(user: state.user)));
         if (state.success)
           Navigator.pushReplacement(
               context,
               PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: SelectTypePage(user: state.user)));
+                  type: PageTransitionType.fade,
+                  child: HomePage()));
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
