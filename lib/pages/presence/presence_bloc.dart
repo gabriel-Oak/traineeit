@@ -14,8 +14,8 @@ class PresenceBloc extends Bloc<PresenceEvent, PresenceState> {
     if (event is InitPresence) {
       yield state.copyWith(loading: true);
       try {
-        // final course = await courseService.getCourses()
-        yield state.copyWith(loading: false);
+        final course = await courseService.getById(event.id);
+        yield state.copyWith(loading: false, course: course);
       } catch (e) {
         yield state.copyWith(
           loading: false,

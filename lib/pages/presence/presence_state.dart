@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:traineeit/models/course_read_model.dart';
+import 'package:traineeit/models/user_course_model.dart';
 
 @immutable
 class PresenceState extends Equatable {
-  final CourseReadModel course;
+  final UserCourseModel course;
   final bool loading;
   final String error;
 
@@ -14,8 +14,11 @@ class PresenceState extends Equatable {
     this.error,
   });
 
-  PresenceState copyWith(
-          {bool loading, CourseReadModel course, String error}) =>
+  PresenceState copyWith({
+    bool loading,
+    UserCourseModel course,
+    String error,
+  }) =>
       PresenceState(
         loading: loading ?? this.loading,
         course: course ?? this.course,
