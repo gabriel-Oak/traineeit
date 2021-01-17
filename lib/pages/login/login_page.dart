@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'google_singin.dart';
+import '../../services/google_singin.dart';
 import 'login_bloc.dart';
 import 'login_content.dart';
 
