@@ -35,12 +35,12 @@ class _SharedAppBarState extends State<SharedAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Container(
-        padding: EdgeInsets.only(left: 16),
+      title: Container(
+         width: 120,
         child: SvgPicture.asset(
           'assets/images/logo.svg',
           semanticsLabel: 'Acme Logo',
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.fitHeight,
         ),
       ),
       actions: [
