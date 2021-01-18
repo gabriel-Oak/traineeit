@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traineeit/utils/LocalUser.dart';
 
 class EnrollButton extends StatelessWidget {
   final Function(BuildContext context) onTap;
@@ -23,7 +24,7 @@ class EnrollButton extends StatelessWidget {
             ),
             color: Theme.of(context).primaryColor,
             child: Text(
-              'Matricule-se',
+              LocalUser().user.type == 'Usuario' ? 'Matricule-se' :  'Acompanhar',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.white,

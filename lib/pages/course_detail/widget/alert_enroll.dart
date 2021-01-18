@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:traineeit/pages/course_detail_registered/course_detail_registered_page.dart';
+import 'package:traineeit/utils/LocalUser.dart';
 
 class AlertEnroll extends StatelessWidget {
   @override
@@ -24,7 +25,7 @@ class AlertEnroll extends StatelessWidget {
                       children: [
                         Container(
                           width: 200,
-                          child: Text('Deseja confirmar sua matricula?',
+                          child: Text(LocalUser().user.type == 'Usuario' ? 'Deseja confirmar sua matricula?' :  'Deseja acompanhar esse curso?',
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Theme.of(context).primaryColor,
