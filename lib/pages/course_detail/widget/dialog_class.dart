@@ -36,17 +36,14 @@ class DialogClass extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child: Row(
-                        children: [
-                          Text(
-                            classModel.name,
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Theme.of(context).primaryColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+                      child: Text(
+                        classModel.name,
+                        maxLines: 2,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     Padding(
