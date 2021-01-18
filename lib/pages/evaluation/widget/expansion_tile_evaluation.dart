@@ -40,6 +40,8 @@ class ExpansionTileEvaluation extends StatelessWidget {
               ),
               SizedBox(height: 16),
               TextFormField(
+                initialValue: 'https://github.com/loremare',
+                enabled: false,
                 decoration: InputDecoration(
                   labelText: 'Link do aluno',
                   filled: true,

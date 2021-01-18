@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traineeit/components/back_button.dart';
-import 'package:traineeit/components/header_course.dart';
 import 'package:traineeit/pages/evaluation/widget/expansion_tile_evaluation.dart';
 
 import 'evaluation_bloc.dart';
@@ -21,6 +20,7 @@ class EvaluationContent extends StatelessWidget {
           Container(
             width: 56,
             child: TextFormField(
+              initialValue: '8',
               decoration: InputDecoration(
                 filled: true,
                 border: InputBorder.none,

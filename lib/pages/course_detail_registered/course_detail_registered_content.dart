@@ -186,7 +186,7 @@ class CourseDetailRegisteredContent extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.fade,
-                          child: PresencePage(id: 1),
+                          child: EvaluationPage(),
                         ),
                       );
                     },
@@ -196,7 +196,7 @@ class CourseDetailRegisteredContent extends StatelessWidget {
                     color: Color(0xff007A7B),
                     elevation: 0,
                     child: Text(
-                      'Frequencia',
+                      'Pauta',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,

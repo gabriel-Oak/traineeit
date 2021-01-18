@@ -49,7 +49,7 @@ class Lesson extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Avaliação | 8'),
+                Text(''),
                 RaisedButton(
                   onPressed: () {},
                   shape: RoundedRectangleBorder(
