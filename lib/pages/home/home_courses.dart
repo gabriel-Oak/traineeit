@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:traineeit/components/course_cover.dart';
-import 'package:traineeit/pages/course_detail_registered/course_detail_registered_page.dart';
 import 'package:traineeit/pages/register_course/register_course_page.dart';
 
 class HomeCourses extends StatelessWidget {
@@ -85,7 +84,7 @@ class HomeCourses extends StatelessWidget {
                             Navigator.push(
                               context,
                               PageTransition(
-                                type: PageTransitionType.bottomToTop,
+                                type: PageTransitionType.fade,
                                 child: RegisterCoursePage(),
                               ),
                             );

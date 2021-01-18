@@ -53,16 +53,6 @@ class HomePainel extends StatelessWidget {
                     decoration: TextDecoration.none,
                   ),
                 ),
-                FloatingActionButton(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  child: Icon(
-                    Icons.search,
-                    size: 28,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                  onPressed: () {},
-                ),
               ],
             ),
             HomeNewCourses(courses: courses),

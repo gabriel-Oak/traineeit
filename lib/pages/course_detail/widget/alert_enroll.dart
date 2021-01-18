@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:traineeit/pages/course_detail_registered/course_detail_registered_page.dart';
 
 class AlertEnroll extends StatelessWidget {
   @override
@@ -56,7 +58,16 @@ class AlertEnroll extends StatelessWidget {
                         ),
                       ),
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.fade,
+                              child: CourseDetailRegisteredPage(),
+                            ),
+                          );
+                        },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
