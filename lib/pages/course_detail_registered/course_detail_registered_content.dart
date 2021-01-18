@@ -72,35 +72,6 @@ class CourseDetailRegisteredContent extends StatelessWidget {
                   )
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: Text(
-                  'Link para Instrutor',
-                  style: TextStyle(
-                      color: Color(0xff555555),
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: .8),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: TextFormField(
-                  minLines: 2,
-                  maxLines: 4,
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(16),
-                    hintText: 'Cole aqui o link para acesso do seu instrutor',
-                    border: InputBorder.none,
-                    disabledBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    errorBorder: InputBorder.none,
-                    focusedErrorBorder: InputBorder.none,
-                  ),
-                ),
-              ),
               LocalUser().user.type == 'Aluno'
                   ? Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),

@@ -26,17 +26,16 @@ class _SharedAppBarState extends State<SharedAppBar> {
     await widget.googleSignIn.logout();
     Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(
-            builder: (context) =>
-                LoginPage()),
+        MaterialPageRoute(builder: (context) => LoginPage()),
         ModalRoute.withName('/root'));
   }
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Container(
-         width: 120,
+        width: 120,
         child: SvgPicture.asset(
           'assets/images/logo.svg',
           semanticsLabel: 'Acme Logo',
@@ -51,18 +50,14 @@ class _SharedAppBarState extends State<SharedAppBar> {
               Text(
                 'Logout',
                 style: TextStyle(
-                  color: Theme
-                      .of(context)
-                      .primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               SizedBox(width: 6),
               Icon(
                 Icons.logout,
                 size: 20,
-                color: Theme
-                    .of(context)
-                    .primaryColor,
+                color: Theme.of(context).primaryColor,
               ),
             ],
           ),
