@@ -1,2 +1,4 @@
-Alias key
-Senha: teste123
+## Traineeit
+
+### Projeto do Hackathon da CCR.
+
