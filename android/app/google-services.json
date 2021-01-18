@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "532322133172-hnn82nq48q56d95o4pp9q73a7t6t9kgh.apps.googleusercontent.com",
+          "client_id": "532322133172-bojdc4a8u0ji57qtj2veiqq6eauqmpk1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "br.com.traineeit",
-            "certificate_hash": "5e0d9c7e640d10536e8857d291b694fb1e1dedc6"
+            "certificate_hash": "22055fd813f7ced16af9b2cd614db00f66936738"
           }
         },
         {

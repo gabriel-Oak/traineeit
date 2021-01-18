@@ -15,7 +15,7 @@ class HomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<HomeBloc, HomeState>(
       listener: (context, state) {
-        controller.animatePanelToPosition(0);
+//        controller.animatePanelToPosition(0);
 
         if (state.error != null && state.error.isNotEmpty) {
           final snack = SnackBar(
@@ -71,6 +71,7 @@ class HomeContent extends StatelessWidget {
                                 canSeeSubs: state.user.type != 'Aluno',
                                 canCreate: state.user.type == 'Professor',
                                 canAddLogo: state.user.type == 'Empresa',
+                          type: state.user.type,
                               )
                             : Container(),
                       ],
