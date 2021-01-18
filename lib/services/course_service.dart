@@ -24,6 +24,7 @@ class CourseService {
   Future<CourseReadModel> getByIdRead(int id) async {
     final Response<Map<String, dynamic>> res =
         await dio.get('/cursoleitura/$id');
+    print(res.data);
     return CourseReadModel.fromJSON(res.data);
   }
 

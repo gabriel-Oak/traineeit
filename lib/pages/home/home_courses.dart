@@ -52,7 +52,7 @@ class HomeCourses extends StatelessWidget {
               children: [
                 canCreate
                     ? Container(
-                        height: 180,
+                        height: 200,
                         width: 150,
                         margin: EdgeInsets.only(right: 10),
                         padding: EdgeInsets.all(10),
@@ -94,7 +94,7 @@ class HomeCourses extends StatelessWidget {
                     : Container(),
                 myCourses.length == 0 && ['Aluno', 'Empresa'].contains(type)
                     ? Container(
-                        height: 180,
+                        height: 200,
                         width: 150,
                         margin: EdgeInsets.only(right: 10),
                         padding: EdgeInsets.all(10),

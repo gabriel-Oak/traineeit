@@ -68,7 +68,7 @@ class EvaluationContent extends StatelessWidget {
                           style: TextStyle(fontSize: 10, letterSpacing: .4),
                           children: [
                             TextSpan(
-                                text: 'Gabriel',
+                                text: 'Marina',
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w500)),
                           ],
@@ -101,13 +101,9 @@ class EvaluationContent extends StatelessWidget {
                   )
                 ],
               ),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
-              ExpansionTileEvaluation(),
+              ExpansionTileEvaluation(name: 'Lucas Fernando', email: 'lucatfer@gmail.com.br',),
+              ExpansionTileEvaluation(name: 'Geovana Inacio', email: 'geoinaciosilva@gmail.com.br',),
+              ExpansionTileEvaluation(name: 'Miguel Aleixo', email: 'miguelaleixo@gmail.com.br',),
             ]));
       }),
     );

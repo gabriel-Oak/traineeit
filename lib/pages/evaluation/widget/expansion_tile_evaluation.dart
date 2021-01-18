@@ -4,6 +4,14 @@ import '../../../theme.dart';
 import 'item_evaluation.dart';
 
 class ExpansionTileEvaluation extends StatelessWidget {
+  final String name;
+  final String email;
+
+  ExpansionTileEvaluation({
+    @required this.name,
+    @required this.email,
+});
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -15,8 +23,8 @@ class ExpansionTileEvaluation extends StatelessWidget {
         cursorColor: primaryColor,
       ),
       child: ExpansionTile(
-        title: Text('Nome e Sobrenome'),
-        subtitle: Text('email@gmail.com'),
+        title: Text(name),
+        subtitle: Text(email),
         children: [
           Column(
             children: [
@@ -25,27 +33,9 @@ class ExpansionTileEvaluation extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ItemEvaluation(),
-                  ItemEvaluation(),
-                  ItemEvaluation(),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ItemEvaluation(),
-                  ItemEvaluation(),
-                  ItemEvaluation(),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ItemEvaluation(),
-                  ItemEvaluation(),
-                  ItemEvaluation(),
+                  ItemEvaluation(index: 1),
+                  ItemEvaluation(index: 2),
+                  ItemEvaluation(index: 3),
                 ],
               ),
               SizedBox(height: 16),

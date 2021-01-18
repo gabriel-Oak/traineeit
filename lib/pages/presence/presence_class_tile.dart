@@ -1,6 +1,32 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 class PresenceClassTile extends StatelessWidget {
+  final int index;
+  final String titulo;
+  final String data;
+
+  PresenceClassTile({
+    @required this.index,
+    @required this.titulo,
+    @required this.data,
+  });
+
+  final user = [
+    {
+      'name': faker.person.name(),
+      'email': faker.internet.email(),
+    },
+    {
+      'name': faker.person.name(),
+      'email': faker.internet.email(),
+    },
+    {
+      'name': faker.person.name(),
+      'email': faker.internet.email(),
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +44,7 @@ class PresenceClassTile extends StatelessWidget {
             backgroundColor: Colors.grey,
             radius: 24,
             child: Text(
-              '0X',
+              '0$index',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
@@ -27,7 +53,7 @@ class PresenceClassTile extends StatelessWidget {
             ),
           ),
           title: Text(
-            'Aula X | 22-11-2020 às 15:00',
+            '$titulo | $data',
             style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontSize: 16,
@@ -36,43 +62,89 @@ class PresenceClassTile extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          subtitle: Text(
-            'Lorem ipsum dolor',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
         ),
-        children: List.filled(
-          20,
-          ListTile(
-            title: Text(
-              'Nome e Sobrenome',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w500,
+        children: [
+          Column(
+            children: [
+              ListTile(
+                title: Text(
+                  user[0]['name'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                trailing: Container(
+                  child: Radio(
+                    activeColor: Theme.of(context).primaryColor,
+                    value: true,
+                    groupValue: true,
+                    onChanged: (_) {},
+                  ),
+                ),
+                subtitle: Text(
+                    user[0]['email'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
               ),
-            ),
-            trailing: Container(
-              child: Radio(
-                activeColor: Theme.of(context).primaryColor,
-                value: true,
-                groupValue: true,
-                onChanged: (_) {},
+              ListTile(
+                title: Text(
+                  user[1]['name'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                trailing: Container(
+                  child: Radio(
+                    activeColor: Theme.of(context).primaryColor,
+                    value: true,
+                    groupValue: true,
+                    onChanged: (_) {},
+                  ),
+                ),
+                subtitle: Text(
+                  user[1]['email'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
               ),
-            ),
-            subtitle: Text(
-              'email@gmail.com',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 9,
-                fontWeight: FontWeight.w300,
+              ListTile(
+                title: Text(
+                  user[2]['name'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                trailing: Container(
+                  child: Radio(
+                    activeColor: Theme.of(context).primaryColor,
+                    value: true,
+                    groupValue: true,
+                    onChanged: (_) {},
+                  ),
+                ),
+                subtitle: Text(
+                  user[2]['email'],
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
+            ],
+
+          )
+        ],
       ),
     );
   }
