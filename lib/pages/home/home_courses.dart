@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:traineeit/components/course_cover.dart';
+import 'package:traineeit/pages/course_detail_registered/course_detail_registered_page.dart';
+import 'package:traineeit/pages/register_course/register_course_page.dart';
 
 class HomeCourses extends StatelessWidget {
   final List<dynamic> myCourses;
   final bool canSeeSubs;
   final bool canCreate;
   final bool canAddLogo;
+  final String type;
+
 
   HomeCourses({
     @required this.myCourses,
     @required this.canSeeSubs,
     @required this.canCreate,
     @required this.canAddLogo,
+    @required this.type,
   });
 
   @override
@@ -76,7 +82,49 @@ class HomeCourses extends StatelessWidget {
                             ],
                           ),
                           // TODO: dar push pra tela de cadastro curso
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: RegisterCoursePage(),
+                              ),
+                            );
+                          },
+                        ),
+                      )
+                    : Container(),
+                myCourses.length == 0 && ['Aluno', 'Empresa'].contains(type)
+                    ? Container(
+                        height: 180,
+                        width: 150,
+                        margin: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: InkWell(
+                          child: Center(
+                            child: Text(
+                              'Você ainda não está acompanhando nenhum curso',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: RegisterCoursePage(),
+                              ),
+                            );
+                          },
                         ),
                       )
                     : Container(),
