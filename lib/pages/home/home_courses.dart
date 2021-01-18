@@ -81,7 +81,6 @@ class HomeCourses extends StatelessWidget {
                               ),
                             ],
                           ),
-                          // TODO: dar push pra tela de cadastro curso
                           onTap: () {
                             Navigator.push(
                               context,
@@ -104,27 +103,16 @@ class HomeCourses extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: InkWell(
-                          child: Center(
-                            child: Text(
-                              'Você ainda não está acompanhando nenhum curso',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
+                        child: Center(
+                          child: Text(
+                            'Você ainda não está acompanhando nenhum curso',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.bottomToTop,
-                                child: RegisterCoursePage(),
-                              ),
-                            );
-                          },
                         ),
                       )
                     : Container(),
