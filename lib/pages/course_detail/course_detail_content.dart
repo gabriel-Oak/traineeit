@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traineeit/components/back_button.dart';
 import 'package:traineeit/components/header_course.dart';
+import 'package:traineeit/models/class_model.dart';
 import 'package:traineeit/pages/course_detail/widget/alert_enroll.dart';
 import 'package:traineeit/pages/course_detail/widget/class_item.dart';
 import 'package:traineeit/pages/course_detail/widget/companies.dart';
@@ -62,7 +63,7 @@ class CourseDetailContent extends StatelessWidget {
                             .map(
                               (e) => ClassItem(
                                 text: e.name,
-                                onTap: _showDialog,
+                                onTap: (_) => _showDialog(context, e),
                               ),
                             )
                             .toList()
@@ -78,10 +79,12 @@ class CourseDetailContent extends StatelessWidget {
     );
   }
 
-  _showDialog(BuildContext context) {
+  _showDialog(BuildContext context, ClassModel classModel) {
     showDialog(
       context: context,
-      child: DialogClass(),
+      child: DialogClass(
+        classModel: classModel,
+      ),
     );
   }
 

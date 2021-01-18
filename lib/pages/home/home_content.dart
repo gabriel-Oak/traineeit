@@ -28,14 +28,14 @@ class HomeContent extends StatelessWidget {
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return SlidingUpPanel(
-            minHeight: state.loading ? 80 : 280,
+            minHeight: state.loading ? 90 : 280,
             maxHeight: MediaQuery.of(context).size.height,
             controller: controller,
             body: Stack(
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height - 70,
+                  height: MediaQuery.of(context).size.height - 80,
                   color: Colors.grey[100],
                   child: Image.asset(
                     'assets/images/background.png',
@@ -71,7 +71,7 @@ class HomeContent extends StatelessWidget {
                                 canSeeSubs: state.user.type != 'Aluno',
                                 canCreate: state.user.type == 'Professor',
                                 canAddLogo: state.user.type == 'Empresa',
-                          type: state.user.type,
+                                type: state.user.type,
                               )
                             : Container(),
                       ],

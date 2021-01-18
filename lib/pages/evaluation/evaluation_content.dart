@@ -10,11 +10,13 @@ import 'evaluation_state.dart';
 class EvaluationContent extends StatelessWidget {
   Widget item(context) => Row(
         children: [
-          Text('Aula 01', style: TextStyle(
-            color: Theme.of(context).primaryColor,
-            fontSize: 12,
-            fontWeight: FontWeight.w500
-          ),),
+          Text(
+            'Aula 01',
+            style: TextStyle(
+                color: Theme.of(context).primaryColor,
+                fontSize: 12,
+                fontWeight: FontWeight.w500),
+          ),
           SizedBox(width: 8),
           Container(
             width: 56,
@@ -28,9 +30,7 @@ class EvaluationContent extends StatelessWidget {
                 errorBorder: InputBorder.none,
                 focusedErrorBorder: InputBorder.none,
               ),
-              style: TextStyle(
-                color: Colors.grey.shade700
-              ),
+              style: TextStyle(color: Colors.grey.shade700),
               textAlign: TextAlign.center,
             ),
           ),
@@ -48,7 +48,59 @@ class EvaluationContent extends StatelessWidget {
                 const EdgeInsets.only(bottom: 80, left: 16, right: 16, top: 0),
             child: Column(children: [
               ArrowBackButton(),
-              CourseDetail(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Design UI/UX ',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            color: Theme.of(context).primaryColor),
+                      ),
+                      Text.rich(
+                        TextSpan(
+                          text: 'Criado por: ',
+                          style: TextStyle(fontSize: 10, letterSpacing: .4),
+                          children: [
+                            TextSpan(
+                                text: 'Gabriel',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w500)),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Chip(
+                          backgroundColor: Color.fromRGBO(0, 122, 123, 0.4),
+                          label: Text('12 aulas',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500))),
+                      SizedBox(width: 16),
+                      Chip(
+                        backgroundColor: Color.fromRGBO(0, 122, 123, 0.4),
+                        label: Text(
+                          '30h',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
               ExpansionTileEvaluation(),
               ExpansionTileEvaluation(),
               ExpansionTileEvaluation(),

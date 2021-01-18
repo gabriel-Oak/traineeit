@@ -23,13 +23,7 @@ class DialogClass extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 8.0),
-                          child: Text('aula 11',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor,
-                                  fontSize: 12)),
-                        ),
+                        Container(),
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0, right: 16),
                           child: InkWell(
@@ -44,12 +38,14 @@ class DialogClass extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 16),
                       child: Row(
                         children: [
-                          Text('Lorem ipsum dolor',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.w500,
-                              )),
+                          Text(
+                            classModel.name,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -64,7 +60,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget risus libero. Vestibulum fermentum nibh ut enim porta, a consectetur lectus dapibus.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       ''',
                         textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 14, color: Color(0xff555555)),
+                        style:
+                            TextStyle(fontSize: 14, color: Color(0xff555555)),
                       ),
                     )
                   ],
