@@ -16,12 +16,13 @@ class CourseService {
   }
 
   Future<UserCourseModel> getById(int id) async {
-    final Response<Map<String, dynamic>> res = await dio.get('/curso/3');
+    final Response<Map<String, dynamic>> res = await dio.get('/curso/$id');
     return UserCourseModel.fromJSON(res.data);
   }
 
   Future<CourseReadModel> getByIdRead(int id) async {
-    final Response<Map<String, dynamic>> res = await dio.get('/curso/3');
+    final Response<Map<String, dynamic>> res =
+        await dio.get('/cursoleitura/$id');
     return CourseReadModel.fromJSON(res.data);
   }
 }

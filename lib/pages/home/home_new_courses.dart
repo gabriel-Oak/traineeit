@@ -39,7 +39,7 @@ class HomeNewCourses extends StatelessWidget {
                               context,
                               PageTransition(
                                 type: PageTransitionType.bottomToTop,
-                                child: CourseDetailPage(),
+                                child: CourseDetailPage(id: e.id),
                               ),
                             );
                           },

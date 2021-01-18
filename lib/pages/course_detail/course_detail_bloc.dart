@@ -15,6 +15,7 @@ class CourseDetailBloc extends Bloc<CourseDetailEvent, CourseDetailState> {
       yield state.copyWith(loading: true);
       try {
         final course = await courseService.getByIdRead(event.id);
+        print(course);
         yield state.copyWith(
           loading: false,
           course: course,

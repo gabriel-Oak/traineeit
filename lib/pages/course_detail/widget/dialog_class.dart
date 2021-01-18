@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:traineeit/models/class_model.dart';
 
 class DialogClass extends StatelessWidget {
+  final ClassModel classModel;
+
+  DialogClass({@required this.classModel});
+
   @override
   Widget build(BuildContext context) {
     return Center(
