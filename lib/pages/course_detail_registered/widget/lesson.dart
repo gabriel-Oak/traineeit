@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
 class Lesson extends StatelessWidget {
+  final String name;
+  final String title;
+  final String link;
+
+  Lesson({
+    @required this.title,
+    @required this.name,
+    @required this.link,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(
-          color: Colors.grey.shade300,
-          width: 1
-        ))
-      ),
+          border: Border(
+              bottom: BorderSide(color: Colors.grey.shade300, width: 1))),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -18,14 +25,13 @@ class Lesson extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
-              child: Text('aula 1  |  22/11/2020 às 15:00',
+              child: Text(title,
                   style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 12)),
+                      color: Theme.of(context).primaryColor, fontSize: 12)),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 4),
-              child: Text('Lorem ipsum dolor',
+              child: Text(name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Theme.of(context).primaryColor,
@@ -34,10 +40,10 @@ class Lesson extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget risus libero. ',
+              child: Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget risus libero. ',
                   style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 12)),
+                      color: Theme.of(context).primaryColor, fontSize: 12)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
